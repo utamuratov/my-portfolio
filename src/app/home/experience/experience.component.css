@@ -1,0 +1,21 @@
+:host {
+  display: block;
+}
+
+.linier-title {
+  background: linear-gradient(180deg, #5BADFF 0%, #1373D1 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.logo-img {
+  position: relative;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.company {
+  display: block;
+  margin-bottom: 3rem;
+}

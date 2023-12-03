@@ -1,1 +1,111 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./assets/styles/basic.less";
+
+@font-face {
+    font-family: "Poppins-Bold";
+    src: url('./assets/fonts/Poppins/Poppins-Bold.ttf');
+}
+
+@font-face {
+    font-family: "Poppins-Medium";
+    src: url('./assets/fonts/Poppins/Poppins-Medium.ttf');
+}
+
+@font-face {
+    font-family: "Poppins-Regular";
+    src: url('./assets/fonts/Poppins/Poppins-Regular.ttf');
+}
+
+@font-face {
+    font-family: "Poppins-Light";
+    src: url('./assets/fonts/Poppins/Poppins-Light.ttf');
+}
+
+
+
+html {
+    scroll-behavior: smooth;
+    font-size: 14px;
+
+    @media (max-width: 606px) {
+        font-size: 12px;
+    }
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: #161513;
+    color: #fff;
+    font-family: "Poppins-Light";
+}
+
+h1 {
+    margin: 0;
+    font-size: 4rem;
+    line-height: 120%;
+    font-family: "Poppins-Bold";
+}
+
+h3 {
+    margin: 0;
+    font-family: 'Poppins-Bold';
+}
+
+h2 {
+    margin: 0;
+    text-transform: uppercase;
+    font-family: 'Poppins-Bold';
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.menu a {
+    font-size: 1.2rem;
+}
+
+p {
+    line-height: 150%;
+    color: #C5C5C5;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.pt-6 {
+    padding-top: 6rem;
+}
+
+.pb-3 {
+    padding-bottom: 3rem;
+}
+
+.font-regular {
+    font-family: "Poppins-Regular";
+}
+
+.card {
+    border-radius: 1.2rem;
+    background: #2A2A2A;
+    text-transform: capitalize;
+    width: 100%;
+    cursor: pointer;
+
+    &__body {
+        height: 235px;
+        overflow: hidden;
+        border-top-left-radius: 1.2rem;
+        border-top-right-radius: 1.2rem;
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__footer {
+        padding: 14px 23px;
+
+        span {
+            font-size: 0.8rem;
+        }
+    }
+}

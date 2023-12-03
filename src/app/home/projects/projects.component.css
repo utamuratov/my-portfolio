@@ -1,0 +1,24 @@
+:host {
+  display: block;
+}
+
+.linier-title {
+  background: linear-gradient(180deg, #FF8660 0%, #D5491D 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cards {
+  width: 100%;
+  /* important */
+  display: flex;
+  /* important */
+  /* align-items: stretch; */
+  /* justify-content: space-around; */
+  gap: 2rem;
+}
+
+.cards .card {
+  text-transform: uppercase;
+}

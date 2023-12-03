@@ -1,0 +1,25 @@
+:host {
+  display: block;
+}
+
+.experience {
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.experience a {
+  position: relative;
+  height: 42px;
+  width: 42px;
+}
+
+.experience a img {
+  filter: grayscale(100%);
+  height: 42px;
+  width: 42px;
+}
+
+.experience a img:hover {
+  filter: grayscale(0%);
+}

@@ -23,7 +23,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
           </div>
           <div class="card__footer">
             <span>CLICK HERE TO VISIT</span>
-            <h3>My words</h3>
+            <h3>My words <span class="beta">Beta</span></h3>
           </div>
         </a>
       </div>

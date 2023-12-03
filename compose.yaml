@@ -1,0 +1,12 @@
+services:
+  web:
+    build:
+      context: .
+    
+    ports:
+      - 4213:80
+
+    restart: always
+    # volumes:
+    #   - ./:/usr/src/app
+    #   - /usr/src/app/node_modules

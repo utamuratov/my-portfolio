@@ -4,12 +4,12 @@
   display: block;
 }
 
-#home {
-  padding: 10px 0;
-}
-
 h1 {
   height: 200px;
+
+  @media (max-width: 768px) {
+    font-size: 3.5rem;
+  }
 }
 
 .linier-color {

@@ -1,4 +1,4 @@
-@import './../../../assets/styles/typed.scss';
+@import "./../../../assets/styles/typed.scss";
 
 :host {
   display: block;
@@ -8,8 +8,12 @@
   padding: 10px 0;
 }
 
+h1 {
+  height: 200px;
+}
+
 .linier-color {
-  background: linear-gradient(116deg, #FF8660 71.79%, #9A33FF 95.51%);
+  background: linear-gradient(116deg, #ff8660 71.79%, #9a33ff 95.51%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -18,7 +22,13 @@
     font-weight: 600;
   }
 
-  @include typed("not a bug;<[15]>", "an undocumented feature ;)<[30]>",
+  @include typed(
+    "not a bug;<[15]>",
+    "an undocumented feature ;)<[30]>",
     2,
-    (caret-width: 2px, caret-space: 2px));
+    (
+      caret-width: 2px,
+      caret-space: 2px,
+    )
+  );
 }

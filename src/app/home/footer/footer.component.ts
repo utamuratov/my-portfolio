@@ -110,6 +110,24 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
                 </div>
               </a>
             </li>
+
+            <!-- GITHUB -->
+            <li>
+              <a href="https://github.com/utamuratov" target="_blank">
+                <div class="img-social">
+                  <img ngSrc="./assets/images/github.png" fill alt="" />
+                </div>
+              </a>
+            </li>
+
+            <!-- NPM -->
+            <li>
+              <a href="https://www.npmjs.com/~utamuratov" target="_blank">
+                <div class="img-social" style="width: 1.3rem; height: 1.3rem">
+                  <img ngSrc="./assets/images/npm.png" fill alt="" />
+                </div>
+              </a>
+            </li>
           </ul>
         </div>
       </div>

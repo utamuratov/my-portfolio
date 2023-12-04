@@ -7,7 +7,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   template: `
     <div
       id="home"
-      class="container d-flex flex-column align-items-center justify-content-space-between"
+      class="container d-flex flex-column align-items-center justify-content-space-around"
       style="height: calc(100vh - 80px);"
     >
       <img src="./assets/images/avatar.png" style="width: 200px;" alt="" />

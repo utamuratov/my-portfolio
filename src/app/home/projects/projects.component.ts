@@ -8,13 +8,17 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
     <div id="projects" class="container">
       <h2 class="linier-title text-center pt-6">Projects</h2>
       <div class="cards">
-        <a class="card" href="https://t.me/hbirthday2you_bot" target="_blank">
+        <a
+          class="card"
+          href="https://www.youtube.com/playlist?list=PLWAG9SizThbZ41Q2qj8VE3uZjoOwE3r39"
+          target="_blank"
+        >
           <div class="card__body">
-            <img src="./assets/images/hbirthday.jpg" />
+            <img src="./assets/images/angular-bg.jpg" alt="" />
           </div>
           <div class="card__footer">
             <span>CLICK HERE TO VISIT</span>
-            <h3>Happy birthday telegram bot</h3>
+            <h3>Angular tutorial</h3>
           </div>
         </a>
         <a class="card" href="https://my-words.uz/" target="_blank">
@@ -37,23 +41,32 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
             <h3>Unique Auto Shipping</h3>
           </div>
         </a>
+        <a class="card" href="https://t.me/hbirthday2you_bot" target="_blank">
+          <div class="card__body">
+            <img src="./assets/images/hbirthday.jpg" />
+          </div>
+          <div class="card__footer">
+            <span>CLICK HERE TO VISIT</span>
+            <h3>Happy birthday telegram bot</h3>
+          </div>
+        </a>
         <a
           class="card"
           href="https://www.youtube.com/playlist?list=PLWAG9SizThbZ41Q2qj8VE3uZjoOwE3r39"
           target="_blank"
         >
           <div class="card__body">
-            <img src="./assets/images/angular-bg.jpg" alt="" />
+            <img src="./assets/images/latin-cyrillic.png" alt="" />
           </div>
           <div class="card__footer">
             <span>CLICK HERE TO VISIT</span>
-            <h3>Angular tutorial</h3>
+            <h3>Cyrillic-Latin</h3>
           </div>
         </a>
       </div>
     </div>
   `,
-  styleUrl: './projects.component.css',
+  styleUrl: './projects.component.less',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProjectsComponent {}

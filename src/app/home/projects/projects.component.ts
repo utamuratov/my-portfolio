@@ -17,7 +17,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
             <h3>Happy birthday telegram bot</h3>
           </div>
         </a>
-        <a class="card" href="http://my-words.uz/" target="_blank">
+        <a class="card" href="https://my-words.uz/" target="_blank">
           <div class="card__body">
             <img src="./assets/images/my-words.jpg" alt="" />
           </div>

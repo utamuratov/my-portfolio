@@ -26,4 +26,4 @@ jobs:
             docker stop my-portfolio-web-1 || true
             docker rm my-portfolio-web-1 || true
             docker rmi my-portfolio-web || true
-            docker-compose up -d
+            docker compose up -d

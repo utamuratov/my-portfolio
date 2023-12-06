@@ -129,14 +129,14 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
               </a>
             </li>
 
-            <!-- LEETCODE -->
+            <!-- LEETCODE
             <li>
               <a href="https://leetcode.com/odilbek/" target="_blank">
                 <div class="img-social">
                   <img ngSrc="./assets/images/leetcode.png" fill alt="" />
                 </div>
               </a>
-            </li>
+            </li> -->
           </ul>
         </div>
       </div>

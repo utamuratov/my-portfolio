@@ -1,4 +1,4 @@
-name: Docker Compose Build and Run
+name: Deploy
 
 on:
   push:
@@ -6,17 +6,24 @@ on:
       - main
 
 jobs:
-  build:
+  Deploy:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Build and run Docker Compose
-        run: |
-          docker-compose build
-          docker-compose up -d
-
-      - name: Show Docker Compose logs
-        run: docker-compose logs
+      - name: Deploy
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          port: 22
+          script: |
+            cd ${{ vars.WORK_DIR }}
+            git pull origin main
+            docker stop my-portfolio-web-1 || true
+            docker rm my-portfolio-web-1 || true
+            docker rmi my-portfolio-web || true
+            docker-compose up -d

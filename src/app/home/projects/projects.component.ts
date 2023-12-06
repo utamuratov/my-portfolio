@@ -8,6 +8,15 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
     <div id="projects" class="container">
       <h2 class="linier-title text-center pt-6">Projects</h2>
       <div class="cards">
+        <a class="card" href="https://uzimizniki.agrozamin.uz/" target="_blank">
+          <div class="card__body">
+            <img src="./assets/images/uzimizniki.jpg" alt="" />
+          </div>
+          <div class="card__footer">
+            <span>CLICK HERE TO VISIT</span>
+            <h3>O'zimizniki</h3>
+          </div>
+        </a>
         <a
           class="card"
           href="https://www.youtube.com/playlist?list=PLWAG9SizThbZ41Q2qj8VE3uZjoOwE3r39"
@@ -47,7 +56,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
           </div>
           <div class="card__footer">
             <span>CLICK HERE TO VISIT</span>
-            <h3>Happy birthday telegram bot</h3>
+            <h3>Happy birthday</h3>
           </div>
         </a>
         <a

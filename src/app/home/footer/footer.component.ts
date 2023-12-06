@@ -123,8 +123,17 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
             <!-- NPM -->
             <li>
               <a href="https://www.npmjs.com/~utamuratov" target="_blank">
-                <div class="img-social" style="width: 1.3rem; height: 1.3rem">
+                <div class="img-social" style="width: 1.4rem; height: 1.4rem">
                   <img ngSrc="./assets/images/npm.png" fill alt="" />
+                </div>
+              </a>
+            </li>
+
+            <!-- LEETCODE -->
+            <li>
+              <a href="https://leetcode.com/odilbek/" target="_blank">
+                <div class="img-social">
+                  <img ngSrc="./assets/images/leetcode.png" fill alt="" />
                 </div>
               </a>
             </li>

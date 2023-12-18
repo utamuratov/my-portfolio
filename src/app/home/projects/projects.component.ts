@@ -61,7 +61,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
         </a>
         <a
           class="card"
-          href="https://www.youtube.com/playlist?list=PLWAG9SizThbZ41Q2qj8VE3uZjoOwE3r39"
+          href="https://chromewebstore.google.com/detail/cyrillic-latin/ahbglcedcldidmgbgnlpknpkbgjnkfoa"
           target="_blank"
         >
           <div class="card__body">

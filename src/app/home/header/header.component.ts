@@ -37,6 +37,9 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
       <li><a href="#projects">Projects</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#contact">Contact</a></li>
+      <li>
+        <a href="https://t.me/utamuratovs" target="_blank">Utamuratovs</a>
+      </li>
     </ng-template>
   `,
   styleUrl: './header.component.less',

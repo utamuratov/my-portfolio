@@ -1,10 +1,11 @@
 import { NgOptimizedImage, NgTemplateOutlet } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { SvgYoutubeComponent } from '../footer/svg-youtube/svg-youtube.component';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [NgOptimizedImage, NgTemplateOutlet],
+  imports: [NgOptimizedImage, NgTemplateOutlet, SvgYoutubeComponent],
   template: `
     <div class="header">
       <div
@@ -37,8 +38,19 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
       <li><a href="#projects">Projects</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#contact">Contact</a></li>
-      <li>
-        <a href="https://t.me/utamuratovs" target="_blank">Utamuratovs</a>
+      <!-- TG BLOG -->
+      <li class="d-flex align-items-center">
+        <a href="https://t.me/utamuratovs" target="_blank">
+          <div class="img-social" style="height: 1.1rem;">
+            <img ngSrc="./assets/images/telegram-just.png" fill alt="" />
+          </div>
+        </a>
+      </li>
+      <!-- YOUTUBE BLOG -->
+      <li class="d-flex align-items-center">
+        <a href="https://www.youtube.com/@utamuratovs" target="_blank">
+          <svg-youtube></svg-youtube>
+        </a>
       </li>
     </ng-template>
   `,

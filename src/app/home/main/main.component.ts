@@ -14,7 +14,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
       <div>
         <h1 class="text-center">It's <span class="linier-color"></span></h1>
         <p class="text-center" style="font-size: 1.3rem;">
-          I am a seasoned frontend engineer with over 5 years of professional
+          I am a seasoned frontend engineer with over 6 years of professional
           experience. And I possess a foundational understanding of backend
           development.
         </p>

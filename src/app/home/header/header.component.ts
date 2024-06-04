@@ -40,7 +40,7 @@ import { SvgYoutubeComponent } from '../footer/svg-youtube/svg-youtube.component
       <li><a href="#contact">Contact</a></li>
       <!-- TG BLOG -->
       <li class="d-flex align-items-center">
-        <a href="https://t.me/utamuratovs" target="_blank">
+        <a href="https://t.me/utamuratovs" target="_blank" class="spin">
           <div class="img-social" style="height: 1.1rem;">
             <img ngSrc="./assets/images/telegram-just.png" fill alt="" />
           </div>

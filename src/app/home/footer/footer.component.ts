@@ -11,7 +11,7 @@ import { SvgYoutubeComponent } from './svg-youtube/svg-youtube.component';
       <div class="container">
         <h3 class="pt-6 pb-3">Contact</h3>
         <p>
-          I am a seasoned frontend engineer with over 5 years of professional
+          I am a seasoned frontend engineer with over 6 years of professional
           experience. And I possess a foundational understanding of backend
           development.
         </p>

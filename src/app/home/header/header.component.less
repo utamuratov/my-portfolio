@@ -72,3 +72,22 @@
   -webkit-filter: grayscale(1) invert(1);
   filter: grayscale(1) invert(1);
 }
+
+a.spin {
+  animation-name: spin;
+  animation-duration: 6000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

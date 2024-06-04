@@ -7,6 +7,18 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   imports: [NgOptimizedImage],
   template: ` <div id="experience" class="container">
     <h2 class="linier-title text-center pt-6">Experience</h2>
+    <a class="company" href="https://uzinfocom.uz/" target="_blank">
+      <div class="d-flex justify-content-space-between align-items-center">
+        <div class="d-flex align-items-center gap-1">
+          <div class="logo-img">
+            <img ngSrc="./assets/images/uzinfocom.png" fill alt="" />
+          </div>
+          <h3>Full-Stack Engineer</h3>
+        </div>
+        <p>May 2024 - Present</p>
+      </div>
+      <p style="margin-top: 1.8rem;"></p>
+    </a>
     <a class="company" href="https://agrobank.uz/" target="_blank">
       <div class="d-flex justify-content-space-between align-items-center">
         <div class="d-flex align-items-center gap-1">
@@ -18,12 +30,31 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
         <p>Feb 2022 - Present</p>
       </div>
       <p style="margin-top: 1.8rem;">
-        Currently, I am working in the Agrozamin project of Agorbank. We have
-        done many projects for almost 2 years. I participated in the main
-        discussions, shared my thoughts and solutions to problems. I reviewed
-        the codes of junior and middle programmers, held consultations with
-        them.
+        I have been working on the Agrozamin project at Agorbank for over two
+        years. During this time, I have actively participated in key
+        discussions, contributing my thoughts and solutions to various
+        challenges. My role also includes reviewing code from junior and
+        mid-level programmers and providing consultations to them. These
+        responsibilities have allowed me to play a crucial role in the project's
+        development and success.
       </p>
+    </a>
+    <a class="company" href="https://us.uz/" target="_blank">
+      <div class="d-flex justify-content-space-between align-items-center">
+        <div class="d-flex align-items-center gap-1">
+          <div class="logo-img">
+            <img
+              style="background-color: #fff; border-radius: 4px"
+              ngSrc="./assets/images/unicon-soft.svg"
+              fill
+              alt=""
+            />
+          </div>
+          <h3>Senior Frontend Engineer</h3>
+        </div>
+        <p>Dec 2023 - Apr 2024</p>
+      </div>
+      <p style="margin-top: 1.8rem;"></p>
     </a>
     <a
       class="company"
@@ -37,7 +68,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
           </div>
           <h3>Frontend Mentor</h3>
         </div>
-        <p>May 2023 - Present</p>
+        <p>May 2023 - Sep 2023</p>
       </div>
       <p style="margin-top: 1.8rem;">
         I taught Angular online to students based on my knowledge and
@@ -86,7 +117,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
           <div class="logo-img">
             <img ngSrc="./assets/images/bepro-logo.png" fill alt="" />
           </div>
-          <h3>Junior Full Stack Developer</h3>
+          <h3>Junior Full-Stack Developer</h3>
         </div>
         <p>Jan 2018 - Sep 2019</p>
       </div>

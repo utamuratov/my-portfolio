@@ -49,7 +49,7 @@ import { SvgYoutubeComponent } from '../footer/svg-youtube/svg-youtube.component
       </li>
       <!-- YOUTUBE BLOG -->
       <li class="d-flex align-items-center">
-        <a href="https://www.youtube.com/@utamuratovs" target="_blank">
+        <a href="#videos">
           <svg-youtube></svg-youtube>
         </a>
       </li>

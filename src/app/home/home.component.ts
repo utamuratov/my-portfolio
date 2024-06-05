@@ -6,6 +6,7 @@ import { ExperienceWithComponent } from './experience-with/experience-with.compo
 import { ProjectsComponent } from './projects/projects.component';
 import { ExperienceComponent } from './experience/experience.component';
 import { CertificatesComponent } from './certificates/certificates.component';
+import { VideosComponent } from './videos/videos.component';
 
 @Component({
   standalone: true,
@@ -17,12 +18,14 @@ import { CertificatesComponent } from './certificates/certificates.component';
     ProjectsComponent,
     ExperienceComponent,
     CertificatesComponent,
+    VideosComponent,
   ],
   template: `
     <app-header></app-header>
     <app-main></app-main>
     <app-certificates></app-certificates>
     <app-experience-with></app-experience-with>
+    <app-videos></app-videos>
     <app-projects></app-projects>
     <app-experience></app-experience>
     <app-footer></app-footer>

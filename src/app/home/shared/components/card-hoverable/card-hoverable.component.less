@@ -1,0 +1,38 @@
+:host {
+  display: block;
+
+  .card {
+    text-transform: uppercase;
+    position: relative;
+
+    &__body {
+      border-radius: 1.2rem;
+    }
+
+    &__footer--absolute {
+      display: none;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 1rem;
+      border-bottom-left-radius: 1.2rem;
+      border-bottom-right-radius: 1.2rem;
+
+      h3 {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 2;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+      }
+    }
+
+    &:hover {
+      .card__footer--absolute {
+        display: block;
+      }
+    }
+  }
+}

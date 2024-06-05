@@ -1,27 +1,16 @@
-import { CommonModule } from '@angular/common';
+import { NgFor } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { SectionComponent } from '../shared/components/section/section.component';
 
 @Component({
   selector: 'app-certificates',
   standalone: true,
-  imports: [CommonModule],
-  template: ` <div id="certificates" class="container">
-    <h2 class="linier-title text-center pt-6">Certificates</h2>
-    <div class="certificates">
-      @for (certificate of certificates; track $index) {
-
-      <a class="card" [href]="certificate.url" target="_blank">
-        <div class="card__body">
-          <img [src]="certificate.image" alt="" />
-        </div>
-        <div class="card__footer--absolute">
-          <span>CLICK HERE TO SEE</span>
-          <h3>{{ certificate.title }}</h3>
-        </div>
-      </a>
-      }
-    </div>
-  </div>`,
+  imports: [NgFor, SectionComponent],
+  template: `<app-section
+    id="certificates"
+    [data]="certificates"
+    title="Certificates"
+  ></app-section>`,
   styleUrl: './certificates.component.less',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

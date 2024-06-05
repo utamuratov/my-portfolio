@@ -8,7 +8,6 @@ body {
   box-sizing: border-box;
 }
 
-
 hr {
   background: #f4f4f5;
   margin-bottom: 16px;
@@ -97,14 +96,15 @@ ul {
   margin-left: auto;
   margin-right: auto;
   padding: 0 15px;
+
+  @media (min-width: 1025px) {
+    max-width: 900px;
+  }
 }
-
-
 
 //#region MARGIN
 
 .m {
-
   //#region MARGIN
   &-0 {
     margin: 0;
@@ -177,7 +177,6 @@ ul {
 //#region PADDING
 
 .p {
-
   //#region PADDING
   &-0 {
     padding: 0;
@@ -224,11 +223,10 @@ ul {
 //#region TEXT
 
 .text {
-
   //#region TEXT-COLOR
   &-color {
     &-gray {
-      color: #C5C5C5 !important;
+      color: #c5c5c5 !important;
     }
   }
 

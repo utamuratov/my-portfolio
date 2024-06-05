@@ -1,11 +1,17 @@
 import { NgOptimizedImage, NgTemplateOutlet } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { SvgYoutubeComponent } from '../footer/svg-youtube/svg-youtube.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [NgOptimizedImage, NgTemplateOutlet, SvgYoutubeComponent],
+  imports: [
+    RouterLink,
+    NgOptimizedImage,
+    NgTemplateOutlet,
+    SvgYoutubeComponent,
+  ],
   template: `
     <div class="header">
       <div
@@ -38,6 +44,7 @@ import { SvgYoutubeComponent } from '../footer/svg-youtube/svg-youtube.component
       <li><a href="#certificates">Certificates</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#experience">Experience</a></li>
+      <li><a [routerLink]="['/blog']">Blog</a></li>
       <li><a href="#contact">Contact</a></li>
       <!-- TG BLOG -->
       <li class="d-flex align-items-center">

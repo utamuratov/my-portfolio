@@ -26,16 +26,20 @@ import { Card } from '../shared/models/card.model';
 export class VideosComponent implements OnInit {
   private http = inject(HttpClient);
 
-  videos$: Observable<any[]> = EMPTY;
+  videos$: Observable<Card[]> = EMPTY;
 
   ngOnInit(): void {
+    this.getVideos();
+  }
+
+  private getVideos() {
     this.videos$ = this.http
       .get<any>(
         'https://www.googleapis.com/youtube/v3/search?key=AIzaSyC4kUsa1qawznfe35iFUMSx4HIg6RpMduw&part=snippet&channelId=UCDWugfW9rGMFq5Pq6HuMNFw&order=date&maxResults=10'
       )
       .pipe(
         map((response) =>
-          response.items.slice(0, 6).map(
+          (response?.items || []).slice(0, 6).map(
             (item: any) =>
               ({
                 image: item.snippet.thumbnails.high.url,

@@ -13,19 +13,27 @@ import { Blog } from './models/blog.model';
 @Component({
   selector: 'app-blog',
   standalone: true,
-  imports: [NgFor, AsyncPipe, GetSrcPipe],
+  imports: [AsyncPipe, GetSrcPipe],
   template: `
     <div class="container">
       <h2 class="pt-6">Blog posts ✈️</h2>
       <div class="posts pb-3">
-        @for (post of posts$ | async; track $index) {
-        <a [href]="post.link" target="_blank">
-          <div class="post__img">
-            <img [src]="post.content | appGetSrc" alt="" />
-          </div>
-          <p class="mt-1">{{ post.pubDate }}</p>
-          <h3>{{ post.title }}</h3>
-        </a>
+        @for (post of (posts$ | async) || [].constructor(10); track $index) {
+          @if (post) {
+            <a [href]="post.link" target="_blank">
+              <div class="post__img">
+                <img class="img" [src]="post.content | appGetSrc" alt="" />
+              </div>
+              <p class="mt-1">{{ post.pubDate }}</p>
+              <h3>{{ post.title }}</h3>
+            </a>
+          } @else {
+            <a>
+              <div class="post__img"></div>
+              <p class="mt-1 skeleton"></p>
+              <h3 class="skeleton" style="width: 50%"></h3>
+            </a>
+          }
         }
       </div>
     </div>
@@ -44,7 +52,7 @@ export class BlogComponent implements OnInit {
   getPosts() {
     this.posts$ = this.http
       .get<any>(
-        'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@odil.utamuratov'
+        'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@odil.utamuratov',
       )
       .pipe(map((w) => w?.items || []));
   }

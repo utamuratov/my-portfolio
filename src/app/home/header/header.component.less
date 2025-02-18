@@ -10,6 +10,13 @@
   height: 80px;
   background-color: #222;
   box-shadow: 0px 4.364px 16px -2.182px rgba(0, 0, 0, 0.1);
+
+  .courses {
+    animation-name: coursesanimation;
+    animation-duration: 4000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
 }
 
 .logo {
@@ -89,5 +96,35 @@ a.spin {
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes coursesanimation {
+  0% {
+    background: linear-gradient(180deg, #bebebe 0%, #ffffff 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  33% {
+    background: linear-gradient(180deg, #fcb09a 0%, #d36e50 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  66% {
+    background: linear-gradient(180deg, #ff8660 0%, #d5491d 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  100% {
+    background: linear-gradient(180deg, #fcb09a 0%, #d36e50 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 }

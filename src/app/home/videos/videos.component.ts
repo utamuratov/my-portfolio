@@ -39,14 +39,22 @@ export class VideosComponent implements OnInit {
       )
       .pipe(
         map((response) =>
-          (response?.items || []).slice(0, 6).map(
-            (item: any) =>
-              ({
-                image: item.snippet.thumbnails.high.url,
-                title: item.snippet.title,
-                url: 'https://youtube.com/watch?v=' + item.id.videoId,
-              } as Card)
-          )
+          (response?.items || [])
+            .filter(
+              (w: any) =>
+                w.id.videoId &&
+                // THESE VIDEOS ARE COURSES TRAILERS
+                !['VW7xfDoM3C8', 'CntDRS99seE'].includes(w.id.videoId)
+            )
+            .slice(0, 6)
+            .map(
+              (item: any) =>
+                ({
+                  image: item.snippet.thumbnails.high.url,
+                  title: item.snippet.title,
+                  url: 'https://youtube.com/watch?v=' + item.id.videoId,
+                } as Card)
+            )
         )
       );
   }

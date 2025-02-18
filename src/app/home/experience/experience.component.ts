@@ -13,11 +13,19 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
           <div class="logo-img">
             <img ngSrc="./assets/images/uzinfocom.png" fill alt="" />
           </div>
-          <h3>Full-Stack Engineer</h3>
+          <h3>Team Lead, Senior Frontend Engineer</h3>
         </div>
         <p>May 2024 - Present</p>
       </div>
-      <p style="margin-top: 1.8rem;"></p>
+      <p style="margin-top: 1.8rem;">
+        I have been working on several projects which are realted to LMS, ERP
+        systems at Uzinfocom. During this time, I have actively participated in
+        key discussions, contributing my thoughts and solutions to various
+        challenges. My role also includes reviewing code from junior and
+        mid-level programmers and providing consultations to them. These
+        responsibilities have allowed me to play a crucial role in the project's
+        development and success.
+      </p>
     </a>
     <a class="company" href="https://agrobank.uz/" target="_blank">
       <div class="d-flex justify-content-space-between align-items-center">
@@ -27,16 +35,15 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
           </div>
           <h3>Team Lead, Senior Frontend Engineer</h3>
         </div>
-        <p>Feb 2022 - Present</p>
+        <p>Feb 2022 - Aug 2024</p>
       </div>
       <p style="margin-top: 1.8rem;">
-        I have been working on the Agrozamin project at Agorbank for over two
-        years. During this time, I have actively participated in key
-        discussions, contributing my thoughts and solutions to various
-        challenges. My role also includes reviewing code from junior and
-        mid-level programmers and providing consultations to them. These
-        responsibilities have allowed me to play a crucial role in the project's
-        development and success.
+        I have worked on the Agrozamin project at Agorbank for over two years.
+        During this time, I have actively participated in key discussions,
+        contributing my thoughts and solutions to various challenges. My role
+        also includes reviewing code from junior and mid-level programmers and
+        providing consultations to them. These responsibilities have allowed me
+        to play a crucial role in the project's development and success.
       </p>
     </a>
     <a class="company" href="https://us.uz/" target="_blank">

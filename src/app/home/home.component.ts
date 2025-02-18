@@ -5,6 +5,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { ExperienceComponent } from './experience/experience.component';
 import { CertificatesComponent } from './certificates/certificates.component';
 import { VideosComponent } from './videos/videos.component';
+import { CoursesComponent } from './courses/courses.component';
 
 @Component({
   standalone: true,
@@ -15,13 +16,15 @@ import { VideosComponent } from './videos/videos.component';
     ExperienceComponent,
     CertificatesComponent,
     VideosComponent,
+    CoursesComponent,
   ],
   template: `
     <app-main></app-main>
     <app-certificates></app-certificates>
     <app-experience-with></app-experience-with>
-    <app-videos></app-videos>
+    <app-courses></app-courses>
     <app-projects></app-projects>
+    <app-videos></app-videos>
     <app-experience></app-experience>
   `,
   styleUrl: './home.component.css',

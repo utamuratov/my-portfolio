@@ -1,0 +1,27 @@
+:host {
+  display: block;
+}
+
+.problems {
+  margin-bottom: 40px;
+}
+
+.problem {
+  h4 {
+    margin-bottom: 0;
+  }
+
+  span {
+    font-weight: bold;
+    color: white;
+  }
+
+  section {
+    padding-left: 10px;
+    border-left: 2px solid rgba(128, 128, 128, 0.288);
+  }
+
+  padding-bottom: 20px;
+  border-bottom: 1px solid gray;
+  margin-bottom: 20px;
+}

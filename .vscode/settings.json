@@ -1,0 +1,9 @@
+{
+  "editor.smoothScrolling": true,
+  "editor.tabFocusMode": true,
+  "editor.find.loop": false,
+  "files.trimFinalNewlines": true,
+  "workbench.list.smoothScrolling": true,
+  "workbench.editor.closeOnFileDelete": true,
+  "workbench.editor.pinnedTabsOnSeparateRow": false
+}

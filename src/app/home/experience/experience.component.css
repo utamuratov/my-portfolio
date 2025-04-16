@@ -3,7 +3,7 @@
 }
 
 .linier-title {
-  background: linear-gradient(180deg, #5BADFF 0%, #1373D1 100%);
+  background: linear-gradient(180deg, #5badff 0%, #1373d1 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

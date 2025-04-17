@@ -21,6 +21,7 @@ export const routes: Routes = [
     data: {
       cover: '../../../../assets/images/courses/samarali-kirish.jpg',
       title: 'Angularga samarali kirish | 100 soniyada',
+      code: 'in100Minutes',
       topics: [
         'Angular nima? Nimaga Angular? Qanday Angular muhitini yaratamiz?',
         'Frontend vs Backend',
@@ -38,20 +39,20 @@ export const routes: Routes = [
         'VsCode uchun Angular extensionlari',
         'Roadmap',
       ],
-      videoLessons: [
-        {
-          link: 'https://youtu.be/VW7xfDoM3C8',
-          title: 'Angularga samarali kirish | Trailer',
-          duration: '1:56',
-          cover: '../../../../assets/images/courses/samarali-kirish.jpg',
-        },
-        {
-          link: 'https://youtu.be/pI-9RB78yaw',
-          title: 'Nima uchun Angular?',
-          duration: '4:34',
-          cover: '../../../../assets/images/courses/nima-uchun-angular.png',
-        },
-      ],
+      // videoLessons: [
+      //   {
+      //     link: 'https://youtu.be/VW7xfDoM3C8',
+      //     title: 'Angularga samarali kirish | Trailer',
+      //     duration: '1:56',
+      //     cover: '../../../../assets/images/courses/samarali-kirish.jpg',
+      //   },
+      //   {
+      //     link: 'https://youtu.be/pI-9RB78yaw',
+      //     title: 'Nima uchun Angular?',
+      //     duration: '4:34',
+      //     cover: '../../../../assets/images/courses/nima-uchun-angular.png',
+      //   },
+      // ],
     },
   },
   {
@@ -60,6 +61,7 @@ export const routes: Routes = [
     data: {
       cover: '../../../../assets/images/courses/levelUP.jpg',
       title: 'Level UP | Angular',
+      code: 'levelUP',
       topics: [
         'Debounce Input',
         'Bundle size ni analiz qilish',
@@ -75,14 +77,14 @@ export const routes: Routes = [
         'Multiple projects',
         "Kutubxona va uni NPM'ga joylash",
       ],
-      videoLessons: [
-        {
-          link: 'https://youtu.be/CntDRS99seE',
-          title: 'Level UP | Trailer',
-          duration: '2:19',
-          cover: '../../../../assets/images/courses/levelUP.jpg',
-        },
-      ],
+      // videoLessons: [
+      //   {
+      //     link: 'https://youtu.be/CntDRS99seE',
+      //     title: 'Level UP | Trailer',
+      //     duration: '2:19',
+      //     cover: '../../../../assets/images/courses/levelUP.jpg',
+      //   },
+      // ],
     },
   },
   {
@@ -91,16 +93,35 @@ export const routes: Routes = [
     data: {
       cover: '../../../../assets/images/courses/angular-bg.jpg',
       title: 'Angular tutotial',
+      code: 'unlimit',
       topics: [
-        'TypeScript asoslari',
-        'Angular structure',
-        'Bindings, One way, two way',
-        'TypeScript asoslari',
-        'Angular structure',
-        'Bindings, One way, two way',
-        'TypeScript asoslari',
-        'Angular structure',
-        'Bindings, One way, two way',
+        'Angularga kirish va asosiy tushunchalar',
+        'Project tuzilmasi va asosiy fayllar tahlili',
+        'Komponentlar: yaratilishi va ishlatilishi',
+        'Template va data binding (interpolation, property binding, event binding)',
+        'Two-way data binding',
+        'Direktivalar: ngIf, ngFor, ngClass, ngStyle',
+        "Komponentlar o‘rtasida ma'lumot almashinuvi",
+        'Service va Dependency Injection',
+        'HTTP so‘rovlar va REST API bilan ishlash',
+        'RxJS va Observablesga kirish',
+        'Router: sahifalar o‘rtasida navigatsiya',
+        'Dinamik routing va parametrlar',
+        'Formlar: Template-driven forms',
+        'Formlar: Reactive forms',
+        'Form validation (sintaktik va dasturlash asosida)',
+        "Pipe'lar: Standart va Custom pipe yaratish",
+        'Lifecycle Hooks tushunchasi',
+        'Modul konsepsiyasi va Lazy Loading',
+        'Angular Materialga kirish',
+        'Reusable komponentlar yaratish',
+        'State Management (ngRx asoslari)',
+        'Error handling va not found sahifalar',
+        'Auth: Login, JWT va AuthGuard',
+        'Testlash: Unit Test va e2e Testlar',
+        'Performance optimization (Change Detection, TrackBy)',
+        'Deployment: Angular ilovasini build qilish va joylashtirish',
+        'Yakuniy loyiha: Amaliy loyiha yaratish va takrorlash',
       ],
     },
   },

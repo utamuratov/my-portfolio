@@ -12,6 +12,7 @@ export default class CoursePage {
   data: {
     cover: string;
     topics: string[];
+    code: 'levelUP' | 'in100Minutes' | 'unlimit'
     videoLessons?: {
       link: string;
       title: string;

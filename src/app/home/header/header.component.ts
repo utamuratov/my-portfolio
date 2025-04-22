@@ -48,7 +48,7 @@ import { RouterLink } from '@angular/router';
       <li><a [routerLink]="['/blog']">Blog</a></li>
       <li><a href="#contact">Contact</a></li>
       <!-- TG BLOG -->
-      <li class="d-flex align-items-center">
+      <li class="d-flex align-items-center justify-content-center">
         <a href="https://t.me/utamuratovs" target="_blank" class="spin">
           <div class="img-social" style="height: 1.1rem;">
             <img ngSrc="./assets/images/telegram-just.png" fill alt="" />
@@ -56,7 +56,7 @@ import { RouterLink } from '@angular/router';
         </a>
       </li>
       <!-- YOUTUBE BLOG -->
-      <li class="d-flex align-items-center">
+      <li class="d-flex align-items-center justify-content-center">
         <a href="#videos">
           <svg-youtube></svg-youtube>
         </a>

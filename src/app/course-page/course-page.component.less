@@ -14,7 +14,8 @@
   height: 400px;
   padding-top: 24px;
   margin-bottom: 24px;
-  img, iframe {
+  img,
+  iframe {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -31,20 +32,27 @@
   border: 1px solid #3c3939;
   border-radius: 50%;
   margin-right: 8px;
+  & ~ span {
+    max-width: 350px;
+    width: 100%;
+    @media (max-width: 800px) {
+      max-width: 100%;
+    }
+  }
 }
 .about-list {
   column-count: 2;
+  column-gap: 30px;
   margin-bottom: 40px;
   padding-bottom: 24px;
+  @media (max-width: 800px) {
+    column-count: 1;
+  }
 }
 .about-list-item {
   font-size: medium;
-  &:not(:last-child) {
-    margin-bottom: 24px;
-  }
-  &:nth-child(4) {
-    margin-bottom: 0;
-  }
+  margin-bottom: 24px;
+  display: flex;
 }
 .course-list {
   margin-bottom: 16px;

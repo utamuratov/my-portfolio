@@ -40,13 +40,15 @@ import { RouterLink } from '@angular/router';
       </ul>
     </div>
     <ng-template #menuList>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#certificates">Certificates</a></li>
-      <li><a href="#courses" class="courses">Courses</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#experience">Experience</a></li>
+      <li><a [routerLink]="['/']" fragment="home">Home</a></li>
+      <li><a [routerLink]="['/']" fragment="certificates">Certificates</a></li>
+      <li>
+        <a [routerLink]="['/']" fragment="courses" class="courses">Courses</a>
+      </li>
+      <li><a [routerLink]="['/']" fragment="projects">Projects</a></li>
+      <li><a [routerLink]="['/']" fragment="experience">Experience</a></li>
       <li><a [routerLink]="['/blog']">Blog</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a [routerLink]="['/']" fragment="contact">Contact</a></li>
       <!-- TG BLOG -->
       <li class="d-flex align-items-center">
         <a href="https://t.me/utamuratovs" target="_blank" class="spin">

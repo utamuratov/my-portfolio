@@ -14,7 +14,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
       <div>
         <h1 class="text-center">It's <span class="linier-color"></span></h1>
         <p class="text-center" style="font-size: 1.3rem;">
-          I am a seasoned frontend engineer with over 6 years of professional
+          I am a seasoned frontend engineer with over 7 years of professional
           experience. And I possess a foundational understanding of backend
           development.
         </p>
@@ -25,7 +25,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
         >
         <a
           class="btn btn-secondary ml-1"
-          href="./assets/docs/Odilbek Utamuratov's CV.pdf"
+          href="./assets/docs/Utamuratov Odilbek Amat o'g'li.pdf"
           download
         >
           Download CV

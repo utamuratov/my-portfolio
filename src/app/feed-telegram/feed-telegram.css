@@ -1,0 +1,5 @@
+@import "./../blog/blog.component.less";
+
+:host {
+  display: block;
+}

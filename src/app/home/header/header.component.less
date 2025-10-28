@@ -11,9 +11,16 @@
   background-color: #222;
   box-shadow: 0px 4.364px 16px -2.182px rgba(0, 0, 0, 0.1);
 
-  .courses {
-    animation-name: coursesanimation;
-    animation-duration: 4000ms;
+  .courseanimation {
+    animation-name: menuanimation;
+    animation-duration: 10000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+  .tganimation {
+    animation-name: menuanimation;
+    animation-duration: 6000ms;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
   }
@@ -99,7 +106,7 @@ a.spin {
   }
 }
 
-@keyframes coursesanimation {
+@keyframes menuanimation {
   0% {
     background: linear-gradient(180deg, #bebebe 0%, #ffffff 100%);
     background-clip: text;

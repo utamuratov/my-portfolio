@@ -30,7 +30,11 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
           ><img src="./assets/images/ts.png" alt=""
         /></a>
         <a target="_blank" href="https://angular.dev/"
-          ><img ngSrc="./assets/images/angular-original.png" fill alt=""
+          ><img
+            ngSrc="./assets/images/angular-original.png"
+            fill
+            priority
+            alt=""
         /></a>
         <a
           target="_blank"

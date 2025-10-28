@@ -16,6 +16,10 @@ export const routes: Routes = [
     loadComponent: () => import('./problems/problems.component'),
   },
   {
+    path: 'feed-telegram',
+    loadComponent: () => import('./feed-telegram/feed-telegram'),
+  },
+  {
     path: 'angular-in-100-minutes',
     loadComponent: () => import('./course-page/course-page.component'),
     data: {

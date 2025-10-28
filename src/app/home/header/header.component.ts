@@ -17,9 +17,14 @@ import { RouterLink } from '@angular/router';
       <div
         class="container h-100 d-flex align-items-center justify-content-space-between"
       >
-        <div class="logo">
-          <img ngSrc="./assets/images/angular-original.png" fill alt="" />
-        </div>
+        <a class="logo" routerLink="/">
+          <img
+            ngSrc="./assets/images/angular-original.png"
+            fill
+            priority
+            alt=""
+          />
+        </a>
         <ul class="menu font-regular">
           <ng-container [ngTemplateOutlet]="menuList"></ng-container>
         </ul>
@@ -43,10 +48,15 @@ import { RouterLink } from '@angular/router';
       <li><a [routerLink]="['/']" fragment="home">Home</a></li>
       <li><a [routerLink]="['/']" fragment="certificates">Certificates</a></li>
       <li>
-        <a [routerLink]="['/']" fragment="courses" class="courses">Courses</a>
+        <a [routerLink]="['/']" fragment="courses" class="courseanimation"
+          >Courses</a
+        >
       </li>
       <li><a [routerLink]="['/']" fragment="projects">Projects</a></li>
-      <li><a [routerLink]="['/']" fragment="experience">Experience</a></li>
+      <!-- <li><a [routerLink]="['/']" fragment="experience">Experience</a></li> -->
+      <li>
+        <a [routerLink]="['/feed-telegram']" class="tganimation">TG channel</a>
+      </li>
       <li><a [routerLink]="['/blog']">Blog</a></li>
       <li><a [routerLink]="['/']" fragment="contact">Contact</a></li>
       <!-- TG BLOG -->

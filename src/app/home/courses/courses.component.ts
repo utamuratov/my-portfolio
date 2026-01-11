@@ -1,10 +1,9 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 @Component({
-  selector: 'app-courses',
-  standalone: true,
-  imports: [RouterLink],
-  template: `
+    selector: 'app-courses',
+    imports: [RouterLink],
+    template: `
     <div id="courses" class="container">
       <h2 class="linier-title text-center pt-6">Courses</h2>
       <div class="cards">
@@ -53,7 +52,7 @@ import { RouterLink } from '@angular/router';
       </div>
     </div>
   `,
-  styleUrl: './courses.component.less',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    styleUrl: './courses.component.less',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CoursesComponent {}

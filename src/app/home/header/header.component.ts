@@ -4,15 +4,14 @@ import { SvgYoutubeComponent } from '../footer/svg-youtube/svg-youtube.component
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-header',
-  standalone: true,
-  imports: [
-    RouterLink,
-    NgOptimizedImage,
-    NgTemplateOutlet,
-    SvgYoutubeComponent,
-  ],
-  template: `
+    selector: 'app-header',
+    imports: [
+        RouterLink,
+        NgOptimizedImage,
+        NgTemplateOutlet,
+        SvgYoutubeComponent,
+    ],
+    template: `
     <div class="header">
       <div
         class="container h-100 d-flex align-items-center justify-content-space-between"
@@ -76,8 +75,8 @@ import { RouterLink } from '@angular/router';
       </li>
     </ng-template>
   `,
-  styleUrl: './header.component.less',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    styleUrl: './header.component.less',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeaderComponent {
   showBurger = false;

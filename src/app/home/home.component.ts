@@ -8,17 +8,16 @@ import { VideosComponent } from './videos/videos.component';
 import { CoursesComponent } from './courses/courses.component';
 
 @Component({
-  standalone: true,
-  imports: [
-    MainComponent,
-    ExperienceWithComponent,
-    ProjectsComponent,
-    ExperienceComponent,
-    CertificatesComponent,
-    VideosComponent,
-    CoursesComponent,
-  ],
-  template: `
+    imports: [
+        MainComponent,
+        ExperienceWithComponent,
+        ProjectsComponent,
+        ExperienceComponent,
+        CertificatesComponent,
+        VideosComponent,
+        CoursesComponent,
+    ],
+    template: `
     <app-main></app-main>
     <app-certificates></app-certificates>
     <app-experience-with></app-experience-with>
@@ -27,7 +26,7 @@ import { CoursesComponent } from './courses/courses.component';
     <app-videos></app-videos>
     <app-experience></app-experience>
   `,
-  styleUrl: './home.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    styleUrl: './home.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeComponent {}

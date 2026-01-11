@@ -2,10 +2,9 @@ import { NgOptimizedImage, UpperCasePipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'app-experience-with',
-  standalone: true,
-  imports: [UpperCasePipe, NgOptimizedImage],
-  template: `
+    selector: 'app-experience-with',
+    imports: [UpperCasePipe, NgOptimizedImage],
+    template: `
     <div id="experienceWith" class="container">
       <p class="text-center font-regular pt-6 pb-3" style="font-size: 20px;">
         {{ 'Experience with' | uppercase }}
@@ -47,7 +46,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
       </div>
     </div>
   `,
-  styleUrl: './experience-with.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    styleUrl: './experience-with.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ExperienceWithComponent {}

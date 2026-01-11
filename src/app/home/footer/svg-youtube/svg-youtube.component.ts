@@ -2,10 +2,9 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'svg-youtube',
-  standalone: true,
-  imports: [],
-  template: `
+    selector: 'svg-youtube',
+    imports: [],
+    template: `
     <svg
       width="21"
       height="16"
@@ -19,7 +18,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
       />
     </svg>
   `,
-  styleUrl: './svg-youtube.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    styleUrl: './svg-youtube.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SvgYoutubeComponent {}

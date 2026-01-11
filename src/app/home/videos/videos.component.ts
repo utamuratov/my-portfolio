@@ -17,10 +17,9 @@ import { CardHoverableComponent } from '../shared/components/card-hoverable/card
 import { mockVideos } from './data/mock-videos';
 
 @Component({
-  selector: 'app-videos',
-  standalone: true,
-  imports: [AsyncPipe, SectionWrapper, VideoModal, CardHoverableComponent],
-  template: `
+    selector: 'app-videos',
+    imports: [AsyncPipe, SectionWrapper, VideoModal, CardHoverableComponent],
+    template: `
     @if (videos$ | async; as videos) {
       <app-section-wrapper id="videos" title="Videos">
         @for (video of videos; track video.url) {
@@ -45,8 +44,8 @@ import { mockVideos } from './data/mock-videos';
     >
     </app-video-modal>
   `,
-  styleUrl: './videos.component.less',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    styleUrl: './videos.component.less',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class VideosComponent implements OnInit {
   private http = inject(HttpClient);

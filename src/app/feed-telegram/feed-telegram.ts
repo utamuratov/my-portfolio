@@ -10,10 +10,9 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Rss } from './rss/rss';
 
 @Component({
-  selector: 'app-feed-telegram',
-  standalone: true,
-  imports: [Rss],
-  template: `
+    selector: 'app-feed-telegram',
+    imports: [Rss],
+    template: `
     <div class="container">
       <h2 class="pt-6">Telegram channel 💬</h2>
       <!-- NOTE: RSS widget needs to upgrade -->
@@ -90,8 +89,8 @@ import { Rss } from './rss/rss';
       </div>
     </div>
   `,
-  styleUrl: './feed-telegram.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    styleUrl: './feed-telegram.css',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export default class FeedTelegram {
   POST_IDS = [223, 222, 219]; // example post IDs

@@ -10,17 +10,16 @@ import {
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 @Component({
-  selector: 'app-rss',
-  standalone: true,
-  imports: [],
-  template: `
+    selector: 'app-rss',
+    imports: [],
+    template: `
     <div id="rssapp-container">
       <rssapp-wall id="kTIyTb7hiwpqJapK"></rssapp-wall>
     </div>
   `,
-  styleUrl: './rss.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    styleUrl: './rss.css',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class Rss implements AfterViewInit {
   constructor(

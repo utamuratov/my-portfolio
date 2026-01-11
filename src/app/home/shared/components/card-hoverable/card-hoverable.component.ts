@@ -9,10 +9,9 @@ import {
 import { Card } from '../../models/card.model';
 
 @Component({
-  selector: 'app-card-hoverable',
-  standalone: true,
-  imports: [],
-  template: ` @if (clickable) {
+    selector: 'app-card-hoverable',
+    imports: [],
+    template: ` @if (clickable) {
       <a class="card" (click)="clicked.emit()">
         <div class="card__body">
           <img [src]="data.image" alt="" />
@@ -33,8 +32,8 @@ import { Card } from '../../models/card.model';
         </div>
       </a>
     }`,
-  styleUrl: './card-hoverable.component.less',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    styleUrl: './card-hoverable.component.less',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CardHoverableComponent {
   @Input({ required: true })

@@ -1,10 +1,9 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'app-main',
-  standalone: true,
-  imports: [],
-  template: `
+    selector: 'app-main',
+    imports: [],
+    template: `
     <div
       id="home"
       class="container d-flex flex-column align-items-center justify-content-space-around"
@@ -33,7 +32,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
       </div>
     </div>
   `,
-  styleUrl: './main.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    styleUrl: './main.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MainComponent {}

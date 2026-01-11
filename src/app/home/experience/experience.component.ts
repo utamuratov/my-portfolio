@@ -2,10 +2,9 @@ import { NgOptimizedImage } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'app-experience',
-  standalone: true,
-  imports: [NgOptimizedImage],
-  template: ` <div id="experience" class="container">
+    selector: 'app-experience',
+    imports: [NgOptimizedImage],
+    template: ` <div id="experience" class="container">
     <h2 class="linier-title text-center pt-6">Experience</h2>
     <a class="company" href="https://uzinfocom.uz/" target="_blank">
       <div class="d-flex justify-content-space-between align-items-center">
@@ -136,7 +135,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
       </p>
     </a>
   </div>`,
-  styleUrl: './experience.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    styleUrl: './experience.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ExperienceComponent {}

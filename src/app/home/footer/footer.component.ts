@@ -3,10 +3,9 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { SvgYoutubeComponent } from './svg-youtube/svg-youtube.component';
 
 @Component({
-  selector: 'app-footer',
-  standalone: true,
-  imports: [NgTemplateOutlet, NgOptimizedImage, SvgYoutubeComponent],
-  template: `
+    selector: 'app-footer',
+    imports: [NgTemplateOutlet, NgOptimizedImage, SvgYoutubeComponent],
+    template: `
     <div id="contact" class="footer">
       <div class="container">
         <h3 class="pt-6 pb-3">Contact</h3>
@@ -158,7 +157,7 @@ import { SvgYoutubeComponent } from './svg-youtube/svg-youtube.component';
       </svg>
     </ng-template>
   `,
-  styleUrl: './footer.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    styleUrl: './footer.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FooterComponent {}

@@ -8,10 +8,9 @@ import {
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
-  selector: 'app-video-modal',
-  standalone: true,
-  imports: [],
-  template: `
+    selector: 'app-video-modal',
+    imports: [],
+    template: `
     @if (isOpen) {
       <div class="modal-overlay" (click)="closeModal()">
         <button class="close-btn" (click)="closeModal()">
@@ -40,8 +39,8 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
       </div>
     }
   `,
-  styleUrl: './video-modal.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    styleUrl: './video-modal.css',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class VideoModal {
   @Input() isOpen = false;

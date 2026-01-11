@@ -25,10 +25,9 @@ interface Playlist {
 }
 
 @Component({
-  selector: 'app-all-videos',
-  standalone: true,
-  imports: [AsyncPipe, VideoModal],
-  template: `
+    selector: 'app-all-videos',
+    imports: [AsyncPipe, VideoModal],
+    template: `
     <div class="container">
       <h2 class="linier-title pt-6">Videolar</h2>
 
@@ -75,8 +74,8 @@ interface Playlist {
       </app-video-modal>
     </div>
   `,
-  styleUrl: './all-videos.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    styleUrl: './all-videos.css',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export default class AllVideos implements OnInit {
   private http = inject(HttpClient);

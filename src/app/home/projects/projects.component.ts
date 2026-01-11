@@ -1,10 +1,9 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'app-projects',
-  standalone: true,
-  imports: [],
-  template: `
+    selector: 'app-projects',
+    imports: [],
+    template: `
     <div id="projects" class="container">
       <h2 class="linier-title text-center pt-6">Projects</h2>
       <div class="cards mt-2">
@@ -51,7 +50,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
       </div>
     </div>
   `,
-  styleUrl: './projects.component.less',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    styleUrl: './projects.component.less',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProjectsComponent {}

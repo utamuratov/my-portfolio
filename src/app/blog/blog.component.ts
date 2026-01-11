@@ -11,10 +11,9 @@ import { GetSrcPipe } from './pipes/get-src.pipe';
 import { Blog } from './models/blog.model';
 
 @Component({
-  selector: 'app-blog',
-  standalone: true,
-  imports: [AsyncPipe, GetSrcPipe],
-  template: `
+    selector: 'app-blog',
+    imports: [AsyncPipe, GetSrcPipe],
+    template: `
     <div class="container">
       <h2 class="pt-6">Blog posts ✈️</h2>
       <div class="posts pb-3">
@@ -38,8 +37,8 @@ import { Blog } from './models/blog.model';
       </div>
     </div>
   `,
-  styleUrl: './blog.component.less',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    styleUrl: './blog.component.less',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BlogComponent implements OnInit {
   private http = inject(HttpClient);

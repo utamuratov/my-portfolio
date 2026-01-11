@@ -1,0 +1,31 @@
+:host {
+  display: block;
+}
+
+.linier-title {
+  background: linear-gradient(180deg, #4570ce 0%, #1d57d5 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section {
+  width: 100%;
+  /* important */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* important */
+  /* align-items: stretch; */
+  /* justify-content: space-around; */
+  gap: 2rem;
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .card__body {
+      height: 300px;
+    }
+  }
+}

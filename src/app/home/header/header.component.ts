@@ -52,7 +52,8 @@ import { RouterLink } from '@angular/router';
           >Courses</a
         >
       </li>
-      <li><a [routerLink]="['/']" fragment="projects">Projects</a></li>
+      <!-- <li><a [routerLink]="['/']" fragment="projects">Projects</a></li> -->
+      <li><a [routerLink]="['/videos']" class="videosanimation">Videos</a></li>
       <!-- <li><a [routerLink]="['/']" fragment="experience">Experience</a></li> -->
       <li>
         <a [routerLink]="['/feed-telegram']" class="tganimation">TG channel</a>

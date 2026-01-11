@@ -5,11 +5,13 @@ export const routes: Routes = [
     path: '',
     loadComponent: () =>
       import('./home/home.component').then((m) => m.HomeComponent),
+    title: 'Odilbek Utamuratov - Senior Frontend Engineer',
   },
   {
     path: 'blog',
     loadComponent: () =>
       import('./blog/blog.component').then((m) => m.BlogComponent),
+    title: 'Blog - Odilbek Utamuratov',
   },
   {
     path: 'problems',
@@ -128,5 +130,10 @@ export const routes: Routes = [
         'Yakuniy loyiha: Amaliy loyiha yaratish va takrorlash',
       ],
     },
+  },
+  {
+    path: 'videos',
+    loadComponent: () => import('./all-videos/all-videos'),
+    title: 'Videolar - Odilbek Utamuratov',
   },
 ];

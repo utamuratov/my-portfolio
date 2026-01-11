@@ -24,6 +24,13 @@
     animation-iteration-count: infinite;
     animation-timing-function: linear;
   }
+
+  .videosanimation {
+    animation-name: menuanimationblue;
+    animation-duration: 8000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
 }
 
 .logo {
@@ -130,6 +137,36 @@ a.spin {
 
   100% {
     background: linear-gradient(180deg, #fcb09a 0%, #d36e50 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+@keyframes menuanimationblue {
+  0% {
+    background: linear-gradient(180deg, #bebebe 0%, #ffffff 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  33% {
+    background: linear-gradient(180deg, #7490cc 0%, #416bc5 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  66% {
+    background: linear-gradient(180deg, #4570ce 0%, #1d57d5 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  100% {
+    background: linear-gradient(180deg, #7490cc 0%, #416bc5 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

@@ -1,11 +1,10 @@
-import { NgFor } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { SectionComponent } from '../shared/components/section/section.component';
 
 @Component({
   selector: 'app-certificates',
   standalone: true,
-  imports: [NgFor, SectionComponent],
+  imports: [SectionComponent],
   template: `<app-section
     id="certificates"
     [data]="certificates"

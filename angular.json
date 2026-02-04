@@ -21,7 +21,12 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "node_modules/@utamuratov/ngx-face-id/models/",
+                "output": "/models/"
+              }
             ],
             "styles": [
               "src/styles.less"

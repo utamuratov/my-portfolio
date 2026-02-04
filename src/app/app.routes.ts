@@ -136,4 +136,8 @@ export const routes: Routes = [
     loadComponent: () => import('./all-videos/all-videos'),
     title: 'Videolar - Odilbek Utamuratov',
   },
+  {
+    path: 'face-id',
+    loadComponent: () => import('./face-id/face-id').then((c) => c.FaceId),
+  },
 ];

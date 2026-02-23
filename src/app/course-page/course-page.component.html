@@ -1,60 +1,67 @@
 <div class="container">
   <div class="bg-content">
-    @if (data.code === "levelUP") {
-    <iframe src="https://www.youtube.com/embed/CntDRS99seE" title="Level UP | Angular | Trailer" frameborder="0"
+    <iframe
+      width="1047"
+      height="589"
+      [src]="data().youTubeVideoId | appYoutubeEmbed: 0 | appSanitizer"
+      frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    } @else if (data.code === "in100Minutes") {
-    <iframe width="1047" height="589"
-      src="https://www.youtube.com/embed/VW7xfDoM3C8?list=PLDeZJa125eSaHJjjbduDvh5zzmLi9fZHZ"
-      title="Angularga samarali kirish | Trailer" frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    } @else {
-    <iframe width="1047" height="589"
-      src="https://www.youtube.com/embed/MPduddgZqQs?list=PLDeZJa125eSbJQqZHUejVKihdUNjkY07j"
-      title="Angular haqida boshlang&#39;ich tushunchalar | 1-dars  |   UnlimIT" frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    }
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    ></iframe>
     <!-- <img [src]="data.cover" alt="" /> -->
   </div>
   <article>
     <h2 class="linier-title">Kursdagi mavzular</h2>
     <ul class="about-list">
-      @for (topic of data.topics; track $index) {
-      <li class="about-list-item">
-        <span class="checkbox">&#10004;</span><span>{{ topic }}</span>
-      </li>
+      @for (topic of data().topics; track $index) {
+        <li class="about-list-item">
+          <span class="checkbox">&#10004;</span><span>{{ topic }}</span>
+        </li>
       }
     </ul>
   </article>
-  @if (data.videoLessons?.length) {
-  <hr style="border: 1px solid #3c3939; margin-bottom: 40px" />
-  <section>
-    <ul style="margin-bottom: 40px">
-      @for (videoLesson of data.videoLessons; track $index) {
-      <li class="course-list">
-        <a class="course-card" [href]="videoLesson.link" target="_blank">
-          <div>
-            <img width="170" height="95" [src]="videoLesson.cover" alt="" />
-            <!-- <iframe
+  @if (videoLessons()?.length) {
+    <hr style="border: 1px solid #3c3939; margin-bottom: 40px" />
+    <section>
+      <ul style="margin-bottom: 40px">
+        @for (videoLesson of videoLessons(); track $index) {
+          <li class="course-list">
+            <a class="course-card" (click)="openVideo(videoLesson.videoId)">
+              <div>
+                <img
+                  width="170"
+                  height="95"
+                  style="object-fit: cover"
+                  [src]="videoLesson.thumbnail"
+                  alt=""
+                />
+                <!-- <iframe
                   width="170"
                   height="95"
                   src="https://i.ytimg.com/vi/MPduddgZqQs/hqdefault.jpg?sqp=-oaymwEmCKgBEF5IWvKriqkDGQgBFQAAiEIYAdgBAeIBCggYEAIYBjgBQAE=&rs=AOn4CLDLUTPYq_PyQC6IkUJl7J5MBixU5g"
                   frameborder="0"
                 ></iframe> -->
-          </div>
-          <div>
-            <h3 class="course-card-title">
-              {{ videoLesson.title }}
-            </h3>
-            <div>Davomiylik: {{ videoLesson.duration }}</div>
-          </div>
-        </a>
-      </li>
-      }
-    </ul>
-  </section>
+              </div>
+              <div>
+                <h3 class="course-card-title">
+                  {{ videoLesson.title }}
+                </h3>
+                <div>
+                  Sana: {{ videoLesson.publishedAt | date: "dd.MM.yyyy" }}
+                </div>
+              </div>
+            </a>
+          </li>
+        }
+      </ul>
+    </section>
   }
 </div>
+
+<app-video-modal
+  [isOpen]="isModalOpen()"
+  [videoId]="selectedVideoId()"
+  (closed)="closeModal()"
+>
+</app-video-modal>

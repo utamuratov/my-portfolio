@@ -6,11 +6,13 @@ import {
   Output,
 } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { YoutubeEmbedPipe } from './youtube-embed-pipe';
+import { SanitizerPipe } from './sanitizer-pipe';
 
 @Component({
-    selector: 'app-video-modal',
-    imports: [],
-    template: `
+  selector: 'app-video-modal',
+  imports: [YoutubeEmbedPipe, SanitizerPipe],
+  template: `
     @if (isOpen) {
       <div class="modal-overlay" (click)="closeModal()">
         <button class="close-btn" (click)="closeModal()">
@@ -27,34 +29,27 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
         </button>
         <div class="modal-content" (click)="$event.stopPropagation()">
           <div class="video-wrapper">
-            <iframe
-              [src]="videoUrl"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            >
-            </iframe>
+            @if (videoId) {
+              <iframe
+                [src]="videoId | appYoutubeEmbed | appSanitizer"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              >
+              </iframe>
+            }
           </div>
         </div>
       </div>
     }
   `,
-    styleUrl: './video-modal.css',
-    changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrl: './video-modal.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class VideoModal {
   @Input() isOpen = false;
   @Input() videoId: string = '';
   @Output() closed = new EventEmitter<void>();
-
-  constructor(private sanitizer: DomSanitizer) {}
-
-  get videoUrl(): SafeResourceUrl {
-    if (!this.videoId) return '';
-    return this.sanitizer.bypassSecurityTrustResourceUrl(
-      `https://www.youtube.com/embed/${this.videoId}?autoplay=1`,
-    );
-  }
 
   closeModal() {
     this.closed.emit();

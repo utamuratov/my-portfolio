@@ -2,15 +2,15 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { SectionComponent } from '../shared/components/section/section.component';
 
 @Component({
-    selector: 'app-certificates',
-    imports: [SectionComponent],
-    template: `<app-section
+  selector: 'app-certificates',
+  imports: [SectionComponent],
+  template: `<app-section
     id="certificates"
     [data]="certificates"
     title="Certificates"
   ></app-section>`,
-    styleUrl: './certificates.component.less',
-    changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrl: './certificates.component.less',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CertificatesComponent {
   certificates = [

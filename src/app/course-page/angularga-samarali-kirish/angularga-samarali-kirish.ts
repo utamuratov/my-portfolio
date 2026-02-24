@@ -1,10 +1,19 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  signal,
+} from '@angular/core';
 import CoursePage from '../course-page.component';
+import { Youtube } from '../../shared/youtube';
+import { mockSamaraliKirish } from '../../shared/data/samarali-kirish';
 
 @Component({
   selector: 'app-angularga-samarali-kirish',
   imports: [CoursePage],
-  template: ` <app-course-page [data]="data" [videoLessons]="videoLessons" /> `,
+  template: `
+    <app-course-page [data]="data" [videoLessons]="videoLessons()" />
+  `,
   styleUrl: './angularga-samarali-kirish.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -32,18 +41,18 @@ export default class AngulargaSamaraliKirish {
       'Roadmap',
     ],
   };
-  videoLessons = [
-    {
-      videoId: 'VW7xfDoM3C8',
-      title: 'Angularga samarali kirish | Trailer',
-      publishedAt: new Date(),
-      thumbnail: '../../../../assets/images/courses/samarali-kirish.jpg',
-    },
-    {
-      videoId: 'pI-9RB78yaw',
-      title: 'Nima uchun Angular?',
-      publishedAt: new Date(),
-      thumbnail: '../../../../assets/images/courses/nima-uchun-angular.png',
-    },
-  ];
+  videoLessons = signal<any[]>([]);
+
+  private $youtube = inject(Youtube);
+
+  ngOnInit(): void {
+    this.$youtube
+      .getVideosByPlaylist(
+        'PLDeZJa125eSaHJjjbduDvh5zzmLi9fZHZ',
+        mockSamaraliKirish,
+      )
+      .subscribe((videos) => {
+        this.videoLessons.set(videos);
+      });
+  }
 }

@@ -1,4 +1,4 @@
-export const mockVideos = {
+export const mockVideos10 = {
   kind: 'youtube#searchListResponse',
   etag: 'xM1cL0_9HbECcspM-VHHLarIEuI',
   nextPageToken: 'CAoQAA',

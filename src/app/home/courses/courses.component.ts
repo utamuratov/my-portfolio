@@ -28,13 +28,13 @@ import { RouterLink } from '@angular/router';
             <h3>Angular Schematics</h3>
           </div>
         </a>
-        <a class="card">
+        <a class="card" [routerLink]="['/bemiddle']">
           <div class="card__body">
             <img src="./assets/images/courses/bemiddle.png" alt="" />
           </div>
           <div class="card__footer">
             <span>CLICK HERE TO VISIT</span>
-            <h3>BeMiddle <span class="beta">Free</span></h3>
+            <h3>BeMiddle <span class="beta">New</span></h3>
           </div>
         </a>
       </div>

@@ -10,9 +10,9 @@ import { SvgYoutubeComponent } from './svg-youtube/svg-youtube.component';
       <div class="container">
         <h3 class="pt-6 pb-3">Contact</h3>
         <p>
-          I am a seasoned frontend engineer with over 6 years of professional
-          experience. And I possess a foundational understanding of backend
-          development.
+          I am a seasoned frontend engineer with over {{ years }} years of
+          professional experience. And I possess a foundational understanding of
+          backend development.
         </p>
         <a
           href="mailto: odil.utamuratov@gmail.com"
@@ -157,4 +157,6 @@ import { SvgYoutubeComponent } from './svg-youtube/svg-youtube.component';
   styleUrl: './footer.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FooterComponent {}
+export class FooterComponent {
+  years = new Date().getFullYear() - 2018;
+}

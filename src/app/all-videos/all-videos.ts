@@ -1,5 +1,4 @@
 import { AsyncPipe } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -7,27 +6,17 @@ import {
   inject,
   signal,
 } from '@angular/core';
-import { EMPTY, Observable, catchError, map, of, startWith } from 'rxjs';
+import { EMPTY, Observable } from 'rxjs';
 import { VideoModal } from '../home/videos/video-modal/video-modal';
-import { videoMockData } from './_video-mock-data';
-
-interface VideoItem {
-  videoId: string;
-  title: string;
-  thumbnail: string;
-  publishedAt: string;
-}
-
-interface Playlist {
-  id: string;
-  title: string;
-  videos: VideoItem[];
-}
+import { Playlist } from '../shared/models/youtube.model';
+import { Youtube } from '../shared/youtube';
+import { allVideoMockData } from '../shared/data/_all-video-mock-data';
+import { Constants } from '../../core/constants';
 
 @Component({
-    selector: 'app-all-videos',
-    imports: [AsyncPipe, VideoModal],
-    template: `
+  selector: 'app-all-videos',
+  imports: [AsyncPipe, VideoModal],
+  template: `
     <div class="container">
       <h2 class="linier-title pt-6">Videolar</h2>
 
@@ -74,75 +63,25 @@ interface Playlist {
       </app-video-modal>
     </div>
   `,
-    styleUrl: './all-videos.css',
-    changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrl: './all-videos.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class AllVideos implements OnInit {
-  private http = inject(HttpClient);
+  private $youtube = inject(Youtube);
 
   playlists$: Observable<Playlist[]> = EMPTY;
   isModalOpen = signal(false);
   selectedVideoId = signal('');
-
-  private readonly API_KEY = 'AIzaSyC4kUsa1qawznfe35iFUMSx4HIg6RpMduw';
-  private readonly CHANNEL_ID = 'UCDWugfW9rGMFq5Pq6HuMNFw';
 
   ngOnInit(): void {
     this.loadPlaylists();
   }
 
   private loadPlaylists() {
-    // Bu yerda playlistlarni yuklash logikasi
-    // Agar playlistlar bo'lmasa, umumiy videolarni ko'rsatamiz
-    this.playlists$ = this.http
-      .get<any>(
-        `https://www.googleapis.com/youtube/v3/search?key=${this.API_KEY}&part=snippet&channelId=${this.CHANNEL_ID}&order=date&maxResults=50&type=video`,
-      )
-      .pipe(
-        startWith(videoMockData),
-        catchError(() => of(videoMockData)),
-        map((response) => {
-          const videos = (response?.items || [])
-            .filter(
-              (item: any) =>
-                item.id.videoId &&
-                !['VW7xfDoM3C8', 'CntDRS99seE'].includes(item.id.videoId),
-            )
-            .map((item: any) => ({
-              videoId: item.id.videoId,
-              title: item.snippet.title,
-              thumbnail: item.snippet.thumbnails.high.url,
-              publishedAt: item.snippet.publishedAt,
-            }));
-
-          // Videolarni yil bo'yicha guruhlash
-          const groupedByYear = this.groupVideosByYear(videos);
-
-          return groupedByYear;
-        }),
-      );
-  }
-
-  private groupVideosByYear(videos: VideoItem[]): Playlist[] {
-    const grouped = videos.reduce(
-      (acc, video) => {
-        const year = new Date(video.publishedAt).getFullYear().toString();
-        if (!acc[year]) {
-          acc[year] = [];
-        }
-        acc[year].push(video);
-        return acc;
-      },
-      {} as Record<string, VideoItem[]>,
+    this.playlists$ = this.$youtube.getVideosByChannelId(
+      Constants.CHANNEL_ID,
+      allVideoMockData,
     );
-
-    return Object.entries(grouped)
-      .sort(([yearA], [yearB]) => Number(yearB) - Number(yearA))
-      .map(([year, videos]) => ({
-        id: year,
-        title: `${year} yil videolari`,
-        videos: videos,
-      }));
   }
 
   openVideo(videoId: string) {

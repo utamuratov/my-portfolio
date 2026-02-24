@@ -1,9 +1,9 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-    selector: 'app-main',
-    imports: [],
-    template: `
+  selector: 'app-main',
+  imports: [],
+  template: `
     <div
       id="home"
       class="container d-flex flex-column align-items-center justify-content-space-around"
@@ -13,9 +13,9 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
       <div>
         <h1 class="text-center">It's <span class="linier-color"></span></h1>
         <p class="text-center" style="font-size: 1.3rem;">
-          I am a seasoned frontend engineer with over 7 years of professional
-          experience. And I possess a foundational understanding of backend
-          development.
+          I am a seasoned frontend engineer with over {{ years }} years of
+          professional experience. And I possess a foundational understanding of
+          backend development.
         </p>
       </div>
       <div>
@@ -32,7 +32,9 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
       </div>
     </div>
   `,
-    styleUrl: './main.component.scss',
-    changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrl: './main.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MainComponent {}
+export class MainComponent {
+  years = new Date().getFullYear() - 2018;
+}

@@ -1,8 +1,13 @@
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  OnInit,
+  signal,
+} from '@angular/core';
 import CoursePage from '../course-page.component';
-import { HttpClient } from '@angular/common/http';
-import { catchError, map, of, startWith } from 'rxjs';
-import { LevelUpMockData } from './_mock.data';
+import { LevelUpMockData } from '../../shared/data/_mock.data';
+import { Youtube } from '../../shared/youtube';
 
 @Component({
   selector: 'app-level-up',
@@ -13,7 +18,7 @@ import { LevelUpMockData } from './_mock.data';
   styleUrl: './level-up.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export default class LevelUp {
+export default class LevelUp implements OnInit {
   data = {
     youTubeVideoId: 'CntDRS99seE',
     cover: '../../../../assets/images/courses/levelUP.jpg',
@@ -37,30 +42,13 @@ export default class LevelUp {
   };
   videoLessons = signal<any[]>([]);
 
-  private readonly API_KEY = 'AIzaSyC4kUsa1qawznfe35iFUMSx4HIg6RpMduw';
-  constructor(private http: HttpClient) {
-    this.http
-      .get<any>(`https://www.googleapis.com/youtube/v3/playlistItems`, {
-        params: {
-          part: 'snippet',
-          playlistId: 'PLDeZJa125eSZlqoPU87dmTZUpexZGFlHs',
-          maxResults: '10',
-          key: this.API_KEY,
-        },
-      })
-      .pipe(
-        startWith(LevelUpMockData),
-        catchError(() => of(LevelUpMockData)),
-        map((response) => {
-          const videos = (response.items || []).map((item: any) => ({
-            videoId: item.snippet.resourceId.videoId,
-            title: item.snippet.title,
-            thumbnail: item.snippet.thumbnails.high.url,
-            publishedAt: item.snippet.publishedAt,
-          }));
+  private $youtube = inject(Youtube);
 
-          return videos;
-        }),
+  ngOnInit(): void {
+    this.$youtube
+      .getVideosByPlaylist(
+        'PLDeZJa125eSZlqoPU87dmTZUpexZGFlHs',
+        LevelUpMockData,
       )
       .subscribe((videos) => {
         this.videoLessons.set(videos);

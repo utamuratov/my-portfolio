@@ -37,6 +37,10 @@ export const routes: Routes = [
     loadComponent: () => import('./course-page/unlimit/unlimit'),
   },
   {
+    path: 'bemiddle',
+    loadComponent: () => import('./course-page/bemiddle/bemiddle'),
+  },
+  {
     path: 'videos',
     loadComponent: () => import('./all-videos/all-videos'),
     title: 'Videolar - Odilbek Utamuratov',

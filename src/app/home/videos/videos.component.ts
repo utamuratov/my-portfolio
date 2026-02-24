@@ -1,5 +1,4 @@
 import { AsyncPipe } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -7,19 +6,20 @@ import {
   inject,
   signal,
 } from '@angular/core';
-import { EMPTY, Observable, catchError, map, of } from 'rxjs';
-import { SectionComponent } from '../shared/components/section/section.component';
+import { EMPTY, Observable } from 'rxjs';
 import { Card } from '../shared/models/card.model';
 import { VideoModal } from './video-modal/video-modal';
 import { Router } from '@angular/router';
 import { SectionWrapper } from '../shared/components/section-wrapper/section-wrapper';
 import { CardHoverableComponent } from '../shared/components/card-hoverable/card-hoverable.component';
-import { mockVideos } from './data/mock-videos';
+import { Youtube } from '../../shared/youtube';
+import { mockVideos10 } from '../../shared/data/videos-10';
+import { Constants } from '../../../core/constants';
 
 @Component({
-    selector: 'app-videos',
-    imports: [AsyncPipe, SectionWrapper, VideoModal, CardHoverableComponent],
-    template: `
+  selector: 'app-videos',
+  imports: [AsyncPipe, SectionWrapper, VideoModal, CardHoverableComponent],
+  template: `
     @if (videos$ | async; as videos) {
       <app-section-wrapper id="videos" title="Videos">
         @for (video of videos; track video.url) {
@@ -44,11 +44,11 @@ import { mockVideos } from './data/mock-videos';
     >
     </app-video-modal>
   `,
-    styleUrl: './videos.component.less',
-    changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrl: './videos.component.less',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class VideosComponent implements OnInit {
-  private http = inject(HttpClient);
+  private $youtube = inject(Youtube);
   private router = inject(Router);
 
   videos$: Observable<(Card & { videoId: string })[]> = EMPTY;
@@ -60,31 +60,10 @@ export class VideosComponent implements OnInit {
   }
 
   private getVideos() {
-    this.videos$ = this.http
-      .get<any>(
-        'https://www.googleapis.com/youtube/v3/search?key=AIzaSyC4kUsa1qawznfe35iFUMSx4HIg6RpMduw&part=snippet&channelId=UCDWugfW9rGMFq5Pq6HuMNFw&order=date&maxResults=10',
-      )
-      .pipe(
-        catchError(() => of(mockVideos)),
-        map((response) =>
-          (response?.items || [])
-            .filter(
-              (w: any) =>
-                w.id.videoId &&
-                !['VW7xfDoM3C8', 'CntDRS99seE'].includes(w.id.videoId),
-            )
-            .slice(0, 6)
-            .map(
-              (item: any) =>
-                ({
-                  image: item.snippet.thumbnails.high.url,
-                  title: item.snippet.title,
-                  url: 'https://youtube.com/watch?v=' + item.id.videoId,
-                  videoId: item.id.videoId,
-                }) as Card & { videoId: string },
-            ),
-        ),
-      );
+    this.videos$ = this.$youtube.getVideos10(
+      Constants.CHANNEL_ID,
+      mockVideos10,
+    );
   }
 
   openVideo(video: Card & { videoId: string }) {

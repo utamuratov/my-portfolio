@@ -7,7 +7,11 @@ import { RouterLink } from '@angular/router';
     <div id="courses" class="container">
       <h2 class="linier-title text-center pt-6">Courses</h2>
       <div class="cards mb-2">
-        <a class="card">
+        <a
+          class="card"
+          href="https://odilbeks-organization.gitbook.io/angular-ustoz-shogirt"
+          target="_blank"
+        >
           <div class="card__body">
             <img
               src="./assets/images/courses/angular-ustoz-shogirt.png"
@@ -19,7 +23,7 @@ import { RouterLink } from '@angular/router';
             <h3>Angular Ustoz-Shogirt</h3>
           </div>
         </a>
-        <a class="card">
+        <a class="card" href="https://youtu.be/zh4I1F3tYHs" target="_blank">
           <div class="card__body">
             <img src="./assets/images/courses/angular-schematics.png" alt="" />
           </div>
